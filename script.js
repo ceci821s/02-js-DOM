@@ -5,12 +5,19 @@
 const titel = document.querySelector("header");
 console.log(titel);
 
-// Definere jeg hvad der skal ændres i min titel (header)
+// får titel til at loade hurtigere - og så der ikke sker andet før min DOM er loaded
+document.addEventListener("DOMContentLoaded", start);
 
-// det her er for alt indholdet (uformateret indhold)
-titel.textContent = "Billedegalleri";
-// det her er for specifikt indhold i min header (indsætte HTMl i min DOM)
-titel.innerHTML = "<h1>Billeder</h1>";
+// Definere jeg hvad der skal ændres i min titel (header) inde i min funktion start
+
+function start() {
+  console.log("dom er loaded");
+
+  // det her er for alt indholdet (uformateret indhold)
+  titel.textContent = "Billedegalleri";
+  // det her er for specifikt indhold i min header (indsætte HTMl i min DOM)
+  titel.innerHTML = "<h1>Billeder</h1>";
+}
 
 // ---------------------------------------------------------
 // NYT INDHOLD I ET ELEMENT (attributter)
@@ -28,21 +35,21 @@ pic.alt = "dette er en alt tekst";
 // NYT INDHOLD MED createElement & appendChild
 
 // lavet en h1'er som jeg vil have lavet om
-let h1 = document.createElement("h1");
+// let h1 = document.createElement("h1");
 
 // lavet en tekst til min h1'er
-let overskrift = document.createTextNode("Min overskrift til info");
+// let overskrift = document.createTextNode("Min overskrift til info");
 
 // sat teksten ind i h1'eren
-h1.appendChild(overskrift);
+// h1.appendChild(overskrift);
 
 // tilføje h1'eren til min DOM
-titel.appendChild(h1);
+// titel.appendChild(h1);
 
 // det samme hvis det er et billede:
-let img = document.createElement("img");
-img.src = "fotos/regnbue.jpeg";
-titel.appendChild(img);
+// let img = document.createElement("img");
+// img.src = "fotos/regnbue.jpeg";
+// titel.appendChild(img);
 // ---------------------------------------------------------
 
 // når man sætter en section i querySelector, så fjerne alt inholdet sig og bliver erstattet med det andet
