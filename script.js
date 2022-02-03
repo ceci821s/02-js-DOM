@@ -27,8 +27,22 @@ pic.alt = "dette er en alt tekst";
 // ---------------------------------------------------------
 // NYT INDHOLD MED createElement & appendChild
 
+// lavet en h1'er som jeg vil have lavet om
 let h1 = document.createElement("h1");
 
+// lavet en tekst til min h1'er
+let overskrift = document.createTextNode("Min overskrift til info");
+
+// sat teksten ind i h1'eren
+h1.appendChild(overskrift);
+
+// tilføje h1'eren til min DOM
+titel.appendChild(h1);
+
+// det samme hvis det er et billede:
+let img = document.createElement("img");
+img.src = "fotos/regnbue.jpeg";
+titel.appendChild(img);
 // ---------------------------------------------------------
 
 // når man sætter en section i querySelector, så fjerne alt inholdet sig og bliver erstattet med det andet
